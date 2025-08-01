@@ -7,8 +7,26 @@ export default function DefaultLayout(){
 
         <>
         <header>
-            <h1>List of books</h1>
+           <div className="container-fluid text-center bg-light">
+            <h1>My list movies</h1>
+                </div>
+            
+          
+           
+
+
+
+
+
+        
         </header>
+
+
+
+
+
+
+
         <main>
             <Outlet />
         </main>
