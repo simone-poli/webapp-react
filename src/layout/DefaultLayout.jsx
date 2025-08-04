@@ -8,16 +8,8 @@ export default function DefaultLayout(){
         <>
         <header>
            <div className="container-fluid text-center bg-light">
-            <h1>My list movies</h1>
+            <h1 className="text-uppercase text-success">My list movies</h1>
                 </div>
-            
-          
-           
-
-
-
-
-
         
         </header>
 

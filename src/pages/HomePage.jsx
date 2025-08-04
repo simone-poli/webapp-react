@@ -35,7 +35,7 @@ export default function HomePage() {
                                 <div className="card mt-3">
                                     <div className="card-img-top">
                                         <Link to={`/movies/${movie.id}`}>
-                                        <img src={movie.image} alt="" />
+                                        <img src={`${import.meta.env.VITE_SERVER_API_URL}${movie.image}`} alt="" />
                                         </Link>
                                     </div>
 

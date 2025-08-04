@@ -24,9 +24,14 @@ export default function SingleMovie() {
     return (
         <>
             <section className="text-center">
+                <div className="my-5">
+                    <img src={`${import.meta.env.VITE_SERVER_API_URL}${singleMovie.image}`} alt="" />
                 <h3>{singleMovie?.title}</h3>
                 <p>{singleMovie.abstract}</p>
-                <div>
+                </div>
+
+                <div className="m-5">
+                    <h3>Reviews users</h3>
                     {singleMovie?.reviews?.map((review) => (
                         <div key={review.id}>
                             <h4>{review.name}</h4>
