@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 export default function SingleMovie() {
@@ -7,7 +8,7 @@ export default function SingleMovie() {
     const { id } = useParams()
     const api_url = `http://localhost:3030/api/movies/${id}`
     const [singleMovie, setSingleMovie] = useState([])
-
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function SingleMovie() {
 
                 <div className="m-5">
                     <h3>Reviews users</h3>
-                    <div className="row row-cols-1 row-cols-md-2 g-3 mt-4">
+                    <div className="row row-cols-1 row-cols-md-2 g-3 my-4">
                         {singleMovie?.reviews?.map((review) => (
 
                             <div className="col" key={review.id}>
@@ -44,6 +45,7 @@ export default function SingleMovie() {
 
                         ))}
                     </div>
+                    <button className="btn btn-dark" onClick={() => navigate(-1)}>Back Home</button>
                 </div>
             </section>
         </>
