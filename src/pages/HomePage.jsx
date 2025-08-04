@@ -39,10 +39,10 @@ export default function HomePage() {
                                         </Link>
                                     </div>
 
-                                    <div className="card-body">
-                                        <Link to={`/movies/${movie.id}`}>
-                                        <h4>{movie.title}</h4>
-                                        <p>{movie.abstract}</p>
+                                    <div className="card-body text-decoration-none ">
+                                        <Link className="text-decoration-none" to={`/movies/${movie.id}`}>
+                                        <h4 className="text-dark">{movie.title}</h4>
+                                        <p className="text-dark">{movie.abstract}</p>
                                         </Link>
                                     </div>
                                 </div>
