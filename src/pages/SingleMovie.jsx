@@ -26,20 +26,24 @@ export default function SingleMovie() {
             <section className="text-center">
                 <div className="my-5">
                     <img src={`${import.meta.env.VITE_SERVER_API_URL}${singleMovie.image}`} alt="" />
-                <h3>{singleMovie?.title}</h3>
-                <p>{singleMovie.abstract}</p>
+                    <h3>{singleMovie?.title}</h3>
+                    <p>{singleMovie.abstract}</p>
                 </div>
 
                 <div className="m-5">
                     <h3>Reviews users</h3>
-                    {singleMovie?.reviews?.map((review) => (
-                        <div key={review.id}>
-                            <h4>{review.name}</h4>
-                            <p><strong>Voto:</strong> {review.vote}</p>
-                            <p>{review.text}</p>
-                            <hr />
-                        </div>
-                    ))}
+                    <div className="row row-cols-1 row-cols-md-2 g-3 mt-4">
+                        {singleMovie?.reviews?.map((review) => (
+
+                            <div className="col" key={review.id}>
+                                <h4>{review.name}</h4>
+                                <p><strong>Voto:</strong> {review.vote}</p>
+                                <p>{review.text}</p>
+                                <hr />
+                            </div>
+
+                        ))}
+                    </div>
                 </div>
             </section>
         </>

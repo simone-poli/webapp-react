@@ -32,7 +32,7 @@ export default function HomePage() {
                         movies.map(movie => {
                             return (
                               <div className="col" key={movie.id}>
-                                <div className="card mt-3">
+                                <div className="card mt-3 border-0">
                                     <div className="card-img-top">
                                         <Link to={`/movies/${movie.id}`}>
                                         <img src={`${import.meta.env.VITE_SERVER_API_URL}${movie.image}`} alt="" />
