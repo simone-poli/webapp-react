@@ -22,7 +22,6 @@ export default function DefaultLayout(){
         <main>
             <Outlet />
         </main>
-        <footer></footer>
         </>
     )
 }

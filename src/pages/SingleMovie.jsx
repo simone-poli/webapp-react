@@ -31,8 +31,8 @@ export default function SingleMovie() {
                     <p>{singleMovie.abstract}</p>
                 </div>
 
-                <div className="m-5">
-                    <h3>Reviews users</h3>
+                <div className="m-5 container">
+                    <h3 className="bg-dark text-light text-uppercase">Reviews users</h3>
                     <div className="row row-cols-1 row-cols-md-2 g-3 my-4">
                         {singleMovie?.reviews?.map((review) => (
 
@@ -45,6 +45,48 @@ export default function SingleMovie() {
 
                         ))}
                     </div>
+                        <div class="mb-3 container">
+                            <h3 className="bg-dark text-light text-uppercase">Insert your review</h3>
+                            <label for="" class="form-label">Nickname</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="Nickname"
+                                id="Nickname"
+                                aria-describedby="helpId"
+                                placeholder="Nickname"
+                            />
+                            <label for="" class="form-label">Vote</label>
+                            <input
+                                type="number"
+                                min={1}
+                                max={5}
+                                class="form-control"
+                                name="vote"
+                                id="vote"
+                                aria-describedby="helpId"
+                                placeholder="Insert your vote for the film"
+                            />
+                            <div class="mb-3">
+                                <label for="" class="form-label">Review</label>
+                                <textarea 
+                                class="form-control" 
+                                name="review" 
+                                id="review" 
+                                rows="3"
+                                placeholder="Insert your review for the film"
+                                > 
+                                </textarea>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+
+
+
+
                     <button className="btn btn-dark" onClick={() => navigate(-1)}>Back Home</button>
                 </div>
             </section>
