@@ -16,6 +16,12 @@ export default function SingleMovie() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                
+                if(data.error){
+                    if(data.message === 'Not found'){
+                        return navigate('/not-found')
+                    }
+                }
                 setSingleMovie(data)
             })
     }, [])
@@ -45,43 +51,43 @@ export default function SingleMovie() {
 
                         ))}
                     </div>
-                        <div class="mb-3 container">
-                            <h3 className="bg-dark text-light text-uppercase">Insert your review</h3>
-                            <label for="" class="form-label">Nickname</label>
-                            <input
-                                type="text"
+                    <div class="mb-3 container">
+                        <h3 className="bg-dark text-light text-uppercase">Insert your review</h3>
+                        <label for="" class="form-label">Nickname</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="Nickname"
+                            id="Nickname"
+                            aria-describedby="helpId"
+                            placeholder="Nickname"
+                        />
+                        <label for="" class="form-label">Vote</label>
+                        <input
+                            type="number"
+                            min={1}
+                            max={5}
+                            class="form-control"
+                            name="vote"
+                            id="vote"
+                            aria-describedby="helpId"
+                            placeholder="Insert your vote for the film"
+                        />
+                        <div class="mb-3">
+                            <label for="" class="form-label">Review</label>
+                            <textarea
                                 class="form-control"
-                                name="Nickname"
-                                id="Nickname"
-                                aria-describedby="helpId"
-                                placeholder="Nickname"
-                            />
-                            <label for="" class="form-label">Vote</label>
-                            <input
-                                type="number"
-                                min={1}
-                                max={5}
-                                class="form-control"
-                                name="vote"
-                                id="vote"
-                                aria-describedby="helpId"
-                                placeholder="Insert your vote for the film"
-                            />
-                            <div class="mb-3">
-                                <label for="" class="form-label">Review</label>
-                                <textarea 
-                                class="form-control" 
-                                name="review" 
-                                id="review" 
+                                name="review"
+                                id="review"
                                 rows="3"
                                 placeholder="Insert your review for the film"
-                                > 
-                                </textarea>
-                            </div>
-                            
-                            
+                            >
+                            </textarea>
                         </div>
-                        
+
+
+                    </div>
+
 
 
 
