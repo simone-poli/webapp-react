@@ -1,8 +1,7 @@
 export default function Loader(){
 
     return (
-
-         <div className="text-center" role="status">
+        <div className="text-center" role="status">
                 <l-bouncy
                     size="45"
                     speed="1.75"

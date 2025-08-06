@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { bouncy } from 'ldrs'
-import Loader from "../../component/Loader"
+import Loader from "../component/Loader"
 bouncy.register()
 
 
@@ -77,7 +77,7 @@ export default function SingleMovie() {
 
     if (loading) {
         return (
-           <Loader />
+            <Loader />
         )
     }
 
