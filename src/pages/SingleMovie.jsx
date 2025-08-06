@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { bouncy } from 'ldrs'
 import Loader from "../component/Loader"
 import FormReview from "../component/FormReview"
+import SingleMovieCard from "../component/SingleMovieCard"
 bouncy.register()
 
 
@@ -49,13 +50,8 @@ export default function SingleMovie() {
     return (
         <>
             <section className="text-center">
-                <div className="my-5">
-                    <img src={`${import.meta.env.VITE_SERVER_API_URL}${singleMovie.image}`} alt="" />
-                    <h3>{singleMovie?.title}</h3>
-                    <p>{singleMovie.abstract}</p>
-                </div>
-
-                <div className="m-5 container">
+                <SingleMovieCard singleMovie={singleMovie} />
+                 <div className="m-5 container">
                     <h3 className="bg-dark text-light text-uppercase">Reviews users</h3>
                     <div className="row row-cols-1 row-cols-md-2 g-3 my-4">
                         {singleMovie?.reviews?.map((review) => (
